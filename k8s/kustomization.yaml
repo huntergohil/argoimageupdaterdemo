@@ -1,0 +1,12 @@
+# k8s/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: demo
+resources:
+  - deployment.yaml
+  - service.yaml
+
+# This lets Image Updater write back the tag cleanly
+images:
+  - name: docker.io/huntergohil2/argocdimageupdaterexperimenthg
+    newTag: "1.0"
