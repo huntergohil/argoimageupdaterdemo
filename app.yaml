@@ -4,15 +4,16 @@ metadata:
   name: demo-app
   namespace: argocdiudemo
   annotations:
-    argocd-image-updater.argoproj.io/image-list: huntergohil2/argocdimageupdaterexperimenthg
-    argocd-image-updater.argoproj.io/app.update-strategy: latest
+    argocd-image-updater.argoproj.io/image-list: >
+      app=docker.io/huntergohil2/argocdimageupdaterexperimenthg
     argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-target: kustomization
     argocd-image-updater.argoproj.io/git-branch: main
-
+    argocd-image-updater.argoproj.io/git-commit-message: "build: automatic update of {{.AppName}}"
 spec:
   project: default
   source:
-    repoURL: git@github.com:huntergohil/argoimageupdaterdemo.git
+    repoURL: https://github.com/huntergohil/argoimageupdaterdemo.git
     targetRevision: main
     path: k8s
   destination:
@@ -22,3 +23,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
