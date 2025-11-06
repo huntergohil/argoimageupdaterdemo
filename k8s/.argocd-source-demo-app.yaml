@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - docker.io/huntergohil2/argocdimageupdaterexperimenthg:1.4
