@@ -4,7 +4,7 @@ metadata:
   name: demo-app
   namespace: argocdiudemo
   annotations:
-    argocd-image-updater.argoproj.io/image-list: app=docker.io/huntergohil2/argocdimageupdaterexperimenthg
+    argocd-image-updater.argoproj.io/image-list: huntergohil2/argocdimageupdaterexperimenthg
     argocd-image-updater.argoproj.io/app.update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
