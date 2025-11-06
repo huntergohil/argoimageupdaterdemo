@@ -1,0 +1,4 @@
+# This lets Image Updater write back the tag cleanly
+images:
+- name: docker.io/huntergohil2/argocdimageupdaterexperimenthg
+  newTag: "1.6"
